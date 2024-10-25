@@ -1,52 +1,215 @@
-<html>
-  <head>
-    <title>Zhang Zhiqiang</title> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Profile</title>
     <style>
-    body {line-height: 2em;}
-    p { font-family:"comic sans ms"; font-size:20px; margin-right: 20%; margin-left: 34%;}
-    h1{ font-family:"comic sans ms"; margin-right: 20%; margin-left: 20%; margin-top:5%;margin-bottom:5%; text-align:center; }
-    h2{ font-family:"comic sans ms"; margin-right: 20%; margin-left: 20%;}
-    li{ font-family:"comic sans ms";font-size:20px; margin-right: 20%; margin-left: 20%;}
-    img{position: absolute; margin-right: 70%;margin-left: 20%;}
-	div{ margin-top: 4%;}
-		span{font-style: italic;color: #0E37F7;}
-    
+        /* Reset and basic styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f0f3f5;
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px 40px;
+            overflow: hidden;
+        }
+
+        /* Header section styling */
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 20px;
+        }
+
+        .profile-pic {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+            border: 3px solid #0056b3;
+        }
+
+        .intro {
+            max-width: 600px;
+        }
+
+        .intro h1 {
+            font-size: 2em;
+            color: #0056b3;
+            margin-bottom: 5px;
+        }
+
+        .intro p {
+            font-size: 1em;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .contact-info {
+            font-size: 1em;
+            font-weight: bold;
+            color: #333;
+            margin-top: 8px;
+        }
+
+        .links {
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+
+        .links a {
+            color: #0056b3;
+            text-decoration: none;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+
+        /* Section styling */
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.6em;
+            color: #0056b3;
+            margin-bottom: 15px;
+            border-left: 4px solid #0056b3;
+            padding-left: 10px;
+        }
+
+        ul {
+            list-style-type: square;
+            margin-left: 20px;
+        }
+
+        li {
+            font-size: 1em;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        /* Responsive layout */
+        @media (max-width: 600px) {
+            .header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .profile-pic {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            h2 {
+                font-size: 1.4em;
+            }
+
+            .intro h1 {
+                font-size: 1.6em;
+            }
+        }
     </style>
-  </head> 
+</head>
 <body>
-    <h1>Zhang Zhiqiang</h1> 
-    <img src="photo.jpg" width="161.5" height="215" >
-    <p>I am a third-year PhD student in Cyberspace Security at Nanjing University of Aeronautics and Astronautics (NUAA), advised by <a href="http://faculty.nuaa.edu.cn/wj1/zh_CN/index.htm">Wang Jian</a> and <a href="http://zhuyw.cn">Zhu Youwen</a>. My research focuses on Applied Cryptography, Data Security and Privacy Protection.<br> 
-    
-    Email: zhangzhiqiang@nuaa.edu.cn<br>
-    Location: Nanjing Jiangsu</P>
-	<div>
-    <h2>Publications</h2>
-    <li> A universal method to change permissions dynamically in ABE, (2023) with  Manuscript.   </li>
-    <li>A Data Management Protocol Integrating Verifiable Deletion and Permissions Revocation, (2023) with  Manuscript.</li>
-    <li>Zhang Z, Zhu Y,  Wang J. et al. "A Verifiable Deletion Protocol for Enhancing Constraints on Public Clouds, IEEE Internet of Things Journal, doi: 10.1109/JIOT.2024.3485636.</li>
-    <li>张志强, 朱友文, 王箭等. 一种验证云存储中数据确定性删除的方法[P]. 江苏省：CN116451270A, 2023-07-18.</li>
-    <li>张志强, 朱友文, 王箭等. 基于内积谓词的属性基隐私保护加密方案[J]. 电子与信息学报, 2023, 45(03): 828-835.</li>
-    <li>Zhang Z, et al. An efficient outsourcing attribute-based encryption scheme in 5G mobile network environments[J]. Peer-to-Peer Networking and Applications, 2021, 14(6): 3488-3501.</li>
-    <li>Zhang Z, et al. Attribute-Based Identity Authentication Scheme Based on Linear Codes[C]. Journal of Physics: Conference Series. IOP Publishing, 2020, 1631(1): 012139.</li>
-  
-    <h2>Project (<span>team member</span>)</h2>
-    <li>The National Key R&D Program of China (No. 2021YFB3100400) </li>
-    <li>The Jiangsu Provincial Key Research and Development Program (No. BE2022068, BE2022068-2) </li>
-    <li>The National Natural Science Foundation of China (No. 62172216, 62032025, 62071222, U20A201092) </li>
-    <li>The Key R&D Program of Guangdong Province (No. 2020B0101090002) </li>
-    <li>The Natural Science Foundation of Jiangsu Province (No. BK20211180) </li>
-    <h2> Links</h2>
-    <li>Crypto++® Library 8.8  <a href="https://cryptopp.com">https://cryptopp.com</a></li>
-    <li>CRYPTO  <a href="https://link.springer.com/conference/crypto">https://link.springer.com/conference/crypto</a></li>
-    <li>EUROCRYPT  <a href="https://link.springer.com/conference/eurocrypt">https://link.springer.com/conference/eurocrypt</a></li>
-    <li>ASIACRYPT <a href="https://link.springer.com/conference/asiacrypt"> https://link.springer.com/conference/asiacrypt</a></li>
-		<br>
-		<br>
-		<br>
-	</div>
-	<p></p><br>
-		<br>
-		<br>
-  </body>
+
+<div class="container">
+    <!-- Header with profile picture and introduction side by side -->
+    <div class="header">
+        <img src="photo.jpg" alt="Profile Picture" class="profile-pic">
+        <div class="intro">
+            <h1>Zhiqiang Zhang</h1>
+
+            <p>I am a third-year PhD student in Cyberspace Security at Nanjing University of Aeronautics and Astronautics (NUAA), advised by Jian Wang and Youwen Zhu. My research focuses on <strong>Applied Cryptography</strong>, <strong>Data Security</strong> and <strong>Privacy Protection</strong>.</p>
+
+            <div class="contact-info">
+                Email: <a href="">zhangzhiqiang@nuaa.edu.cn</a> | Location: Nanjing, China
+            </div>
+            <div class="links">
+                <a href="#publications">Publications</a>
+                <a href="#projects">Projects</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Education section -->
+    <section id="education">
+        <h2>Education</h2>
+        <ul>
+             <li><strong>Joint PhD in Cyberspace Security</strong> - Korea University, 2024/09-Now</li>
+	    <li><strong>PhD in Cyberspace Security</strong> - Nanjing University of Aeronautics and Astronautics, 2021/09-Now</li>
+            <li><strong>Master's in Software Engineering</strong> - Northwest Normal University, 2018/09-2021/06</li>
+            <li><strong>Bachelor's in Software Engineering</strong> - Qingdao Institute of Technology, 2014/09-2018/06</li>
+        </ul>
+    </section>
+
+    <!-- Publications section -->
+    <section id="publications">
+        <h2>Publications</h2>
+        <ul>
+       <li>Zhang Z, Zhu Y, Wang J. et al, "A Verifiable Deletion Protocol for Enhancing Constraints on Public Clouds," [J]<em> <strong>IEEE Internet of Things Journal</strong></em>, 2024. [<a href="https://doi.org/10.1109/JIOT.2024.3485636" target="_blank">DOI</a>]</li>
+            <li>Zhang Z, Zhu Y, Wang J. et al, "A Method for Verifying Deterministic Deletion of Data in Cloud Storage," [P]<em><strong> CN116451270B, (Patents in China, Issued & Granted)</strong></em>, 2022. [<a href="https://chn.oversea.cnki.net/kns/Detail?sfield=fn&QueryID=12&CurRec=1&DBCode=SCPD&dbname=SCPD202401&filename=CN116451270B" target="_blank">DOI</a>]</li>
+            <li>Zhang Z, Zhu Y, Wang J. et al, "A Universal Method to Change Permissions Dynamically in ABE," [C] <em><strong>The 11th International Academic
+Conference for Graduates, NUAA</strong>, 2023,10.</em>, 2021. [<a href="#" target="_blank">DOI</a>]</li>
+	    <li>Zhang Z, Zhu Y, Wang J. et al,"An Attribute-Based Privacy-Preserving Encryption Scheme Based on Inner Product Predicates,"[J] <em><strong>Journal of Electronics & Information Technology</strong>,</em>, 2023. [<a href="https://doi.org/10.11999/JEIT221050" target="_blank">DOI</a>]</li>
+            <li>Zhang Z, Cao S, et al, "An Efficient Outsourcing Attribute-Based Encryption Scheme in 5G Mobile Network Environments," [J] <em><strong>Peer-to-Peer Networking and Applications</strong></em>, 2022. [<a href="https://doi.org/10.1007/s12083-021-01195-2" target="_blank">DOI</a>]</li>
+            <li>Zhang Z, Cao S, et al, "Attribute-Based Identity Authentication Scheme Based on Linear Codes,"[C] <em><strong>Journal of Physics:
+Conference Series. IOP Publishing</strong></em>, 2021. [<a href="https://doi.org/10.1088/1742-6596/1631/1/012139" target="_blank">DOI</a>]</li>s
+        </ul>
+    </section>
+
+    <!-- Projects section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <ul>
+              <li><strong>The China Scholarship Council-China National Scholarship Fund 2024</strong> : Critical Issues Research
+on Attribute-Based Access Control in Cloud Storage. <strong>PI</strong> 
+            <li><strong>The National Key R&D Program for Young Scientists:</strong> Basic Theory Research on Privacy
+Computing and Security Assurance. (No. 2021YFB3100400) <strong>Participation as Student</strong> </li>
+            <li><strong>Project of State Grid Corporation:</strong> Research on Data Security Sharing and Extended Protection
+Technology for Centralized Architecture. (No. 5700-202328293A-1-1-ZN) <strong>Participation as Student</strong> </li>
+        </ul>
+
+    </section>
+
+    <!-- Skills section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Programming Languages: Python, Java, C++</li>
+            <li>Cryptographic Algorithms: ABE, RSA, Elliptic Curve Cryptography</li>
+     
+            <li>Languages: English, Chinese</li>
+        </ul>
+    </section>
+
+    <!-- Contact section -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: zhangzhiqiang@nuaa.edu.cn; darkknightzqz@163.com</p>
+            </section>
+</div>
+
+</body>
 </html>
+
