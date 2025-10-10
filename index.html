@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zhiqiang Zhang - Academic Profile</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Google Fonts - Arial -->
+    <link href="https://fonts.googleapis.com/css2?family=Arial:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0a3d62',
+                        secondary: '#4f46e5',
+                        dark: '#111827',
+                        light: '#f3f4f6'
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            }
+        }
+        
+        body {
+            font-family: 'Times New Roman', sans-serif;
+            color: #111827;
+            background-color: #ffffff;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Times New Roman', sans-serif;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #0a3d62;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .section-title {
+            position: relative;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            bottom: 0;
+            left: 0;
+            background-color: #0a3d62;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu {
+                transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+                max-height: 0;
+                opacity: 0;
+                overflow: hidden;
+            }
+            
+            .mobile-menu.active {
+                max-height: 300px;
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Main Container -->
+    <div class="container mx-auto px-4 py-8 md:py-12 max-w-5xl">
+        <!-- Header Section -->
+        <header class="mb-10">
+            <div class="flex flex-col md:flex-row items-center md:items-start gap-32">
+                <!-- Profile Picture -->
+                <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-white shadow-lg profile-pic">
+                    <img src="Photo.jpg" 
+                         alt="Zhiqiang Zhang" 
+                         class="w-full h-full object-cover">
+                </div>
+                
+                <!-- Personal Information -->
+                <div class="flex-1 text-center md:text-left">
+                    <h1 class="text-3xl md:text-4xl font-bold text-dark mb-2">Zhiqiang Zhang</h1>
+                    <h2 class="text-lg md:text-xl text-primary font-semibold mb-4">Associate Professor</h2>
+                    
+                    <div class="space-y-2 text-sm">
+                        <p class="flex items-center justify-center md:justify-start">
+                            <i class="fa fa-university text-primary mr-3"></i>
+                            <span>College of Computer Science and Engineering, Northwest Normal University</span>
+                        </p>
+                        <p class="flex items-center justify-center md:justify-start">
+                            <i class="fa fa-envelope text-primary mr-3"></i>
+                            <span>zqzhang218@nwnu.edu.cn</span>
+                        </p>
+                        <p class="flex items-center justify-center md:justify-start">
+                            <i class="fa fa-map-marker text-primary mr-3"></i>
+                            <span>Office 6A-218 (Building 6A), YunTing Campus, Northwest Normal University</span>
+                        </p>
+                       <p class="flex items-center justify-center md:justify-start">
+                            <i class="fa fa-map-marker text-primary mr-3"></i>
+                            <span>No. 967, Anning East Road, Anning District, Lanzhou, China</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Navigation -->
+            <nav class="mt-8 border-t border-b border-gray-200 py-4">
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden mb-4">
+                    <button id="mobile-menu-button" class="w-full py-2 px-4 bg-primary text-white rounded-md flex items-center justify-center">
+                        <i class="fa fa-bars mr-2"></i> Menu
+                    </button>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <ul id="desktop-nav" class="hidden md:flex flex-wrap justify-center gap-x-8 gap-y-2">
+                    <li><a href="#about" class="nav-link text-lg font-medium active">About</a></li>
+                    <li><a href="#publications" class="nav-link text-lg font-medium">Publications</a></li>
+                    <li><a href="#projects" class="nav-link text-lg font-medium">Research Projects</a></li>
+                    <li><a href="#awards" class="nav-link text-lg font-medium">Awards & Honors</a></li>
+                    <li><a href="#services" class="nav-link text-lg font-medium">Professional Services</a></li>
+                </ul>
+                
+                <!-- Mobile Navigation -->
+                <ul id="mobile-nav" class="mobile-menu md:hidden">
+                    <li><a href="#about" class="block py-2 px-4 hover:bg-gray-100 rounded">About</a></li>
+                    <li><a href="#publications" class="block py-2 px-4 hover:bg-gray-100 rounded">Publications</a></li>
+                    <li><a href="#projects" class="block py-2 px-4 hover:bg-gray-100 rounded">Research Projects</a></li>
+                    <li><a href="#awards" class="block py-2 px-4 hover:bg-gray-100 rounded">Awards & Honors</a></li>
+                    <li><a href="#services" class="block py-2 px-4 hover:bg-gray-100 rounded">Professional Services</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <!-- Main Content -->
+        <main>
+            <!-- About Section -->
+            <section id="about" class="mb-10">
+                <h2 class="section-title text-3xl font-bold text-dark">About</h2>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <p class="text-gray-700 leading-relaxed">
+                       I'm an Associate Professor at the College of Computer Science and Engineering, Northwest Normal University. My research focuses on <font style="color: #0000CD; font-weight: bold;">Applied Cryptography</font>, <font style="color: #008B45; font-weight: bold;">Access Control</font>, <font style="color: #EE9A49; font-weight: bold;">Privacy Protection</font>, and <font style="color: #CD5555; font-weight: bold;">Network Protocols</font>.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed mt-4">
+                       Previously, I received my Ph.D. in Computer Science and Technology from Nanjing University of Aeronautics and Astronautics in 2025. I was jointly trained at the Department of Computer Science and Engineering, Korea University, where I was advised by Prof. Youwen Zhu and Prof. Jian Wang. During my doctoral study, I also worked closely with Prof. Junbeom Hur from Korea University.
+                    </p>
+                     <p class="text-gray-700 leading-relaxed mt-4">
+                      <font style="color: #CD5555; font-weight: bold;">Openings: </font> <font style="color: #CD5555;">I'm always happy to work with motivated master’s students interested in information security, as well as junior and senior undergraduate students eager to gain research experience. If you are passionate about security and privacy research, feel free to reach out! </font>  <i class="fa fa-envelope text-primary mr-3"></i>
+                    </p>
+                      <p class="text-gray-700 leading-relaxed mt-4">
+                      <font style="color: #008B45; font-weight: bold;">News: </font> 
+                     <font style="color: #000000;">
+                     <li>We are currently working on "Decoupled and Privacy-Preserving Key Generation" which has been submitted to IEEE Transactions on Information Forensics and Security (TIFS)</li>
+                     <li>We are currently working on "Offline Verifiable Data Deletion" which is being prepared for submission to USENIX Security.</li>
+                     </font>  
+                      </p>
+                                   
+                </div>
+            </section>
+            
+            <!-- Publications Section -->
+            <section id="publications" class="mb-10">
+                <h2 class="section-title text-3xl font-bold text-dark">Publications</h2>
+                
+                <div class="space-y-2">
+                    <!-- Publication 1 -->
+                    <div class="publication-item p-4 bg-white rounded-lg shadow-sm">
+                        <h3 >
+                            <span>1.</span> <span class="text-primary font-bold">Zhiqiang Zhang</span>, Youwen Zhu, Xiaohui Ding, Jian Wang and Junbeom Hur.
+                            <span>A Fine-Grained Data Access Control Scheme with Policy Privacy and Attribute Privacy in Vehicle-to-Grid [J]</span>.
+                             <span class="italic"><span class="text-primary font-bold"> IEEE Transactions on Smart Grid</span></span>, 2025, 16(4), 3323-3335. 
+                            <a href="https://ieeexplore.ieee.org/abstract/document/10988894" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">[Ref]</a>
+                        </h3>
+                    </div>
+                    
+                     <!-- Publication 2 -->
+                    <div class="publication-item p-4 bg-white rounded-lg shadow-sm">
+                        <h3 >
+                            <span>2.</span> <span class="text-primary font-bold">Zhiqiang Zhang</span>, Youwen Zhu, Xiaohui Ding, Jian Wang and Junbeom Hur.
+                            <span>A Lightweight and Generic Access Rights Update Mechanism for Attribute-Based Encryption in Cloud Storage [J]</span>.
+                             <span class="italic"><span class="text-primary font-bold">Journal of Systems Architecture</span></span>, 2025, 168:103550. 
+                            <a href="https://www.sciencedirect.com/science/article/pii/S138376212500222X" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">[Ref]</a>
+                        </h3>
+
+                    </div>
+                    
+               <!-- Publication 3 -->
+                    <div class="publication-item p-4 bg-white rounded-lg shadow-sm">
+                        <h3 >
+                            <span>3.</span> <span class="text-primary font-bold">Zhiqiang Zhang</span>, Youwen Zhu, Jian Wang, Xiaohui Ding, and Yan Jiang.
+                            <span>A Verifiable DeletionProtocol forEnhancing Constraints on Public Clouds [J]</span>.
+                             <span class="italic"><span class="text-primary font-bold"> IEEE Internet of Things Journal</span></span>, 2024, 12(4), 4499-4509. 
+                            <a href="https://ieeexplore.ieee.org/document/10734140" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">[Ref]</a>
+                        </h3>
+                    </div>
+
+                <!-- Publication 4 -->
+                    <div class="publication-item p-4 bg-white rounded-lg shadow-sm">
+                        <h3 >
+                            <span>4.</span> <span class="text-primary font-bold">Zhiqiang Zhang</span>, Youwen Zhu, Jian Wang and Yan Jiang.
+                            <span>A Method for Verifying the Deterministic Deletion of Data in Cloud Storage [P]</span>.
+                             <span class="italic"><span class="text-primary font-bold"> Patent </span></span>, 2024, Jiangsu Province: CN116451270B. 
+                            <a href="https://kns.cnki.net/kcms2/article/abstract?v=MsI1aVwi7T-oVPzJNZ59xKSQddvDs9SfgEERldXpqioKw5xIG65bsFL7UY7MVwn_VHN2Olmw0pZSxbvAT9l6WHQ275FeTDiyZlDdRb0A85E2_HB4Xv2MzPLghFjG17Y5ktN_bvoNo2XurLPqrWO2QMFPQSaZ-8oLHVKOp16W4hmH9IwjWne3S1nkiNdNxdZageTleKVR4EvvMs-6LCXmWg==&uniplatform=NZKPT" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">[Ref]</a>
+                        </h3>
+                    </div>
+                    <!-- Publication 5 -->
+                    <div class="publication-item p-4 bg-white rounded-lg shadow-sm">
+                        <h3 >
+                            <span>5.</span> <span class="text-primary font-bold">Zhiqiang Zhang</span>, Youwen Zhu, Jian Wang and Yushu Zhang.
+                            <span>Attribute Based Privacy Protection Encryption Scheme Based on Inner Product Predicate [J]</span>.
+                             <span class="italic"><span class="text-primary font-bold"> Journal of Electronics & Information Technology </span></span>, 2023, 45(3): 828-835. 
+                            <a href="https://jeit.ac.cn/cn/article/doi/10.11999/JEIT221050" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">[Ref]</a>
+                        </h3>
+                    </div>
+           
+                    <!-- Publication 6 -->
+                    <div class="publication-item p-4 bg-white rounded-lg shadow-sm">
+                        <h3 >
+                            <span>6.</span> <span class="text-primary font-bold">Zhiqiang Zhang</span>, Suzhen Cao, Xiaodong Yang, Xueyan Liu and Longbo Han.
+                            <span>An EfficientOutsourcingAttribute-Based Encryption Scheme in 5G Mobile Network Environments [J]</span>.
+                             <span class="italic"><span class="text-primary font-bold"> Peer-to-Peer Networking and Applications </span></span>, 2021, 14: 3488-3501. 
+                            <a href="https://link.springer.com/article/10.1007/s12083-021-01195-2" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">[Ref]</a>
+                        </h3>
+                    </div>
+                    <!-- Publication 7 -->
+                    <div class="publication-item p-4 bg-white rounded-lg shadow-sm">
+                        <h3 >
+                            <span>7.</span> <span class="text-primary font-bold">Zhiqiang Zhang</span>, Suzhen Cao, Longbo Han and Xueyan Liu.
+                            <span>Attribute-Based Identity Authentication Scheme Based on Linear Codes [C]</span>.
+                             <span class="italic"><span class="text-primary font-bold"> Journal of Physics: Conference Series, IOP Publishing</span></span>, 2020, 1631(1): 012139. 
+                            <a href="https://iopscience.iop.org/article/10.1088/1742-6596/1631/1/012139" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">[Ref]</a>
+                        </h3>
+                    </div>
+
+                </div>
+            </section>
+            
+            <!-- Research Projects Section -->
+            <section id="projects" class="mb-10">
+                <h2 class="section-title text-3xl font-bold text-dark">Research Projects</h2>
+                
+                <div class="space-y-2">
+                    <!-- Project 1 -->
+                    <div class="project-item p-4 bg-white rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-2">
+                            <span class="text-primary font-bold">1.</span> National Program for State-Sponsored Graduate Students at High-Level Universities
+                        </h3>
+                        <p class="text-gray-700 mb-2">
+                            <span class="text-primary font-bold">Title:</span> Critical Issues Research on Attribute-Based AccessControl in Cloud Storage
+                        </p>
+                        <p class="text-gray-700 mb-2">
+                            <span class="text-primary font-bold">Role:</span> Principal Investigator &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                            <span class="text-primary font-bold">Period:</span> 2024 - 2025
+
+                        </p>
+                     </div>
+                    <!-- Project 2 -->
+                    <div class="project-item p-4 bg-white rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-2">
+                            <span class="text-primary font-bold">2.</span> National Key R&D Program "Cyberspace Security Governance" Key Special Project for Young Scientists
+                        </h3>
+                        <p class="text-gray-700 mb-2">
+                            <span class="text-primary font-bold">Title:</span> Fundamental Research on Privacy Computing and Security Assurance
+                        </p>
+                        <p class="text-gray-700 mb-2">
+                            <span class="text-primary font-bold">Role:</span> Participate &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                            <span class="text-primary font-bold">Period:</span> 2021 - 2024
+
+                        </p>
+                     </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-item p-4 bg-white rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-2">
+                            <span class="text-primary font-bold">3.</span> National Natural Science Foundation of China "Civil Aviation Joint Fund" Key Project
+                        </h3>
+                        <p class="text-gray-700 mb-2">
+                            <span class="text-primary font-bold">Title:</span> Research on a Secure and Trustworthy Blockchain-Based Broadcast Automatic Dependent Surveillance-Broadcast (ADS-B) System
+                        </p>
+                        <p class="text-gray-700 mb-2">
+                            <span class="text-primary font-bold">Role:</span> Participate &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                            <span class="text-primary font-bold">Period:</span> 2024 - 2027
+
+                        </p>
+                     </div>
+
+                    
+                    <!-- Project 4 -->
+                    <div class="project-item p-4 bg-white rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-2">
+                            <span class="text-primary font-bold">4.</span> State Grid Corporation of China Science and Technology Projects
+                        </h3>
+                        <p class="text-gray-700 mb-2">
+                            <span class="text-primary font-bold">Title:</span> Research on Data Security Sharing and Extended Protection Technologies for Middle-Platform Architecture
+                        </p>
+                        <p class="text-gray-700 mb-2">
+                            <span class="text-primary font-bold">Role:</span> Participate &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                            <span class="text-primary font-bold">Period:</span> 2022 - 2024
+                        </p>
+                     </div>
+                       <!-- Project 4 -->
+                    <div class="project-item p-4 bg-white rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-2">
+                            <span class="text-primary font-bold">4.</span> State Grid Corporation of China Science and Technology Projects
+                        </h3>
+                        <p class="text-gray-700 mb-2">
+                            <span class="text-primary font-bold">Title:</span> Research and Application of Key Technologies for Data Sharing and Interaction Between Charging Facilities and Power Grids, and Security Management
+                        </p>
+                        <p class="text-gray-700 mb-2">
+                            <span class="text-primary font-bold">Role:</span> Participate &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                            <span class="text-primary font-bold">Period:</span> 2024 - 2026
+                        </p>
+                     </div>
+
+                    
+                </div>
+            </section>
+            
+            <!-- Awards & Honors Section -->
+            <section id="awards" class="mb-10">
+                <h2 class="section-title text-3xl font-bold text-dark">Awards & Honors</h2>
+                
+                <div class="space-y-2">
+                    <!-- Award 1 -->
+                    <div class="award-item p-4 bg-white rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-2">
+                            Suzhou Industrial Park Class A Scholarship
+                        </h3>
+                        <p class="text-gray-700 mb-2">
+                            <span class="text-primary font-bold">Issued by:</span> Nanjing University of Aeronautics and Astronautics
+                             &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                           <span class="text-primary font-bold">Year:</span> 2025
+                        </p>
+                   </div>
+                    <!-- Award 2 -->
+                    <div class="award-item p-4 bg-white rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-2">
+                            National Scholarship for Government-Sponsored Overseas Students
+                        </h3>
+                        <p class="text-gray-700 mb-2">
+                            <span class="text-primary font-bold">Issued by:</span> China Scholarship Council
+                             &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                           <span class="text-primary font-bold">Year:</span> 2024
+                        </p>
+                   </div>
+
+                    
+                </div>
+            </section>
+            
+            <!-- Professional Services Section -->
+            <section id="services" class="mb-10">
+                <h2 class="section-title text-3xl font-bold text-dark">Professional Services</h2>
+                
+                   <!-- Service 1 -->
+                    <div class="service-item p-4 bg-white rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-2">
+                            Reviewer
+                        </h3>
+                        <p class="text-gray-700 mb-2">
+                            <span class="text-primary font-bold">Journals:</span> IEEE Internet of Things Journal, Peer-to-Peer Networking and Applications, IEEE Transactions on Dependable and Secure Computing, Journal on Communications.
+                            
+                        </p>
+                      </div>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="text-center text-gray-500 pt-8 border-t border-gray-200">
+            <p>&copy; <span id="current-year">2025</span> Zhiqiang Zhang. All rights reserved.</p>
+            <p class="mt-2"></p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<p class="mt-2"></p>
+        </footer>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-nav');
+            mobileMenu.classList.toggle('active');
+        });
+        
+        // Navigation active state
+        const navLinks = document.querySelectorAll('.nav-link');
+        const mobileNavLinks = document.querySelectorAll('#mobile-nav a');
+        
+        function setActiveLink() {
+            const sections = document.querySelectorAll('section');
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 200) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === currentSection) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', setActiveLink);
+        setActiveLink(); // Set initial active link
+        
+        // Mobile nav link click handler
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('mobile-nav').classList.remove('active');
+            });
+        });
+        
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
